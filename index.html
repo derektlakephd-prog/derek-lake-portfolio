@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derek T. Lake, PhD | Health Services Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Style Guide Variables --- */
+        :root {
+            --primary-blue: #005A9C;
+            --dark-blue: #003d6b;
+            --light-blue-bg: #f5f9fc;
+            --dark-text: #212529;
+            --body-text: #333;
+            --border-color: #dee2e6;
+            --white: #ffffff;
+        }
+
+        /* --- Base & Typography --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--body-text);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: var(--dark-text);
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; color: var(--primary-blue); margin-top: 1.5rem; }
+        
+        a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+
+        /* --- Vertical Gap Fix --- */
+        p {
+            margin-bottom: 1.35rem; /* Ensures crisp vertical separation */
+        }
+        
+        /* --- Layout & Navigation --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-section {
+            padding: 3rem 0 2rem 0;
+            background-color: var(--light-blue-bg);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .hero-section .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .nav-bar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 0;
+        }
+
+        .nav-bar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-bar a {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 1.5rem;
+            color: var(--body-text);
+            border-bottom: 3px solid transparent;
+            transition: color 0.2s ease, border-bottom 0.2s ease;
+        }
+
+        .nav-bar a.active, .nav-bar a:hover {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .content-area {
+            padding: 2.5rem 0;
+        }
+
+        /* --- Custom Components --- */
+        .tab-content {
+            display: none;
+            padding-top: 1rem;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        .bio-flex {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .bio-image-container {
+            flex-shrink: 0;
+            width: 30%;
+            text-align: center;
+        }
+        
+        .bio-image-container img {
+            width: 100%;
+            max-width: 180px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-blue);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .bio-text-container {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .pub-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .pub-list li {
+            border-left: 3px solid var(--border-color);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .pub-list em {
+            font-style: italic;
+        }
+
+        .featured-pub {
+            background-color: var(--light-blue-bg);
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary-blue);
+        }
+        
+        .featured-pub p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Ensure responsive layout */
+        @media (max-width: 768px) {
+            .bio-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+            .bio-image-container {
+                width: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1>DEREK T. LAKE, PhD</h1>
+            <p class="subtitle">Health Services Researcher | Health Economics | Value-Based Payment</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="tab-button active" onclick="openTab(event, 'bio')">Bio & Expertise</a></li>
+                <li><a href="#" class="tab-button" onclick="openTab(event, 'research')">Research Portfolio (2025)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content-area">
+        
+        <!-- Tab 1: Bio & Expertise -->
+        <div id="bio" class="tab-content active">
+            <div class="bio-flex">
+                <div class="bio-image-container">
+                    <img src="Derek Lake Photo.png" alt="Photo of Derek T. Lake, PhD">
+                    <p style="font-size: 1.1rem; line-height: 1.2;"><em>Health services researcher bridging rigorous methods with operational expertise from leading healthcare organizations.</em></p>
+                </div>
+                <div class="bio-text-container">
+                    <h2>Academic & Professional Background</h2>
+                    <p>I completed my master's degree in Health Policy and Economics at Weill Cornell Graduate School of Medical Sciences in 2016, followed by a PhD in Health Services Research with a concentration in Health Economics from Brown University in 2022, where I also served as a postdoctoral research associate.</p>
+                    
+                    <p>My research program addresses critical challenges in U.S. healthcare: the consequences of vertical integration between insurers and providers, and how payment models drive disparities in care delivery. What distinguishes this work is the integration of rigorous academic training with nearly a decade of senior leadership experience in healthcare economics and value-based payment strategy at some of the nation's premier accountable care organizations and health insurers.</p>
+                    
+                    <p>This industry experience at leading healthcare organizations provided unique operational insight into how payment policy reforms shape organizational behavior. I witnessed firsthand how these entities respond to value-based payment incentives: optimizing quality performance, refining clinical condition capture to maximize risk adjustment, and implementing strategies to manage utilization and costs. These insights inform research questions that bridge the gap between policy intent and real-world implementation, enabling me to examine not just whether reforms work, but how and why they produce their observed effects.</p>
+                    
+                    <h3>Technical Expertise</h3>
+                    <p>I maintain expert-level proficiency in Python, R, Stata, and SAS, supported by nearly a decade of intensive experience working with large-scale healthcare databases, including administrative claims data, electronic health records, and post-acute care assessments. My technical expertise extends to designing and implementing both local and cloud-based SQL and NoSQL database architectures for enterprise-scale datasets. Additionally, I bring substantial experience leading multidisciplinary teams of programmers and analysts in complex health services research and healthcare analytics environments.</p>
+                    
+                    <h3 style="margin-top: 2.5rem;">Contact Information</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.2;">
+                        Email: <a href="mailto:derek.t.lake.phd@gmail.com">derek.t.lake.phd@gmail.com</a><br>
+                        LinkedIn: <a href="https://www.linkedin.com/in/derek-t-lake-phd-msc-68299445/" target="_blank">View Professional Profile</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab 2: Research Portfolio -->
+        <div id="research" class="tab-content">
+            <h2>Featured Publications (2025)</h2>
+            
+            <p>Please see the interactive summaries of two highlighted studies below.</p>
+
+            <ul class="pub-list">
+                <li class="featured-pub">
+                    <p style="font-size: 0.9rem; color: #555;">FEATURED | VERTICAL INTEGRATION</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.25rem;">The Impact of Health Insurer Acquisitions of Physician Practices on Prices and Patient Visits</p>
+                    <p style="margin-top: 0.5rem; margin-bottom: 1rem;"><em>Health Services Research</em> (2025)</p>
+                    <a href="https://derektlakephd-prog.github.io/hsr-payvider-prices-study/" class="btn btn-primary" target="_blank">View Interactive Summary</a>
+                </li>
+                
+                <li class="featured-pub">
+                    <p style="font-size: 0.9rem; color: #555;">FEATURED | POST-ACUTE CARE</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.25rem;">Comparative Effectiveness of Inpatient Rehabilitation Versus Skilled Nursing Facilities for Stroke and Hip Fracture Patients</p>
+                    <p style="margin-top: 0.5rem; margin-bottom: 1rem;"><em>Journal of the American Geriatrics Society</em> (2025)</p>
+                    <a href="https://derektlakephd-prog.github.io/jags-irf-study/" class="btn btn-primary" target="_blank">View Interactive Summary</a>
+                </li>
+            </ul>
+
+            <h2>Selected Peer-Reviewed Publications (Past 12 Months)</h2>
+            <ul class="pub-list">
+                <li>
+                    <p>Lake, D., Casalino, L., Richards, M., Nicholson, S., Fernandez, R., Zhang, M., Braun, T. (Forthcoming). Evidence of Optum's ASC Pricing Power and Provider Selection. <em>Health Affairs</em>.</p>
+                </li>
+                <li>
+                    <p>Kim, D., Jung, H., Lake, D., et al. (2025). Practice Specialization and Post-acute Outcomes of Patients with Dementia in Skilled Nursing Facilities. <em>Health Services Research</em>.</p>
+                </li>
+                <li>
+                    <p>Wang, Y., Belanger, E., Lake, D., et al. (2025). Do Medicare Accountable Care Organizations Impact Health Care Utilization among Long-Stay Nursing Home Residents? <em>Journal of the American Medical Directors Association</em>.</p>
+                </li>
+                <li>
+                    <p>Yu, J., Casalino, L., Jung, A., Lake, D., et al. (2025). Utilization and quality among Medicare Advantage beneficiaries with high vs low access to telehealth. <em>Health Affairs Scholar</em>.</p>
+                </li>
+                <li>
+                    <p>Adler, L., Crow, A., Fiedler, R., Frank, L., Fernandez, J., Lake, D., Braun, T. (2025). The Changing Landscape of Primary Care: An Analysis of Payer-Primary Care Integration. <em>Health Affairs Scholar</em>.</p>
+                </li>
+                <li>
+                    <p>Baird, E., C., Lake, D., Panagiotou, O., Gozalo, P. (2024). County-Level Mandates Were Generally Effective at Slowing COVID-19 Transmission. <em>Health Affairs</em>.</p>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <script>
+        // JavaScript for Tab Functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove('active');
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove('active');
+            }
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Initialize the first tab as active when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            var firstTabButton = document.querySelector('.nav-bar .tab-button');
+            var firstTabContent = document.querySelector('.tab-content');
+            if (firstTabButton && firstTabContent) {
+                firstTabButton.classList.add('active');
+                firstTabContent.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
