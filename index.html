@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3X5N10GMB"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3X5N10GMB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -9,7 +9,7 @@
 
       gtag('config', 'G-G3X5N10GMB');
     </script>
-	
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derek T. Lake, PhD | Health Services Researcher</title>
@@ -185,6 +185,72 @@
             margin: 0.5rem 0;
         }
         
+        /* --- New Highlight Section Styles --- */
+        .highlight-box {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .highlight-item h4 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-decoration: none;
+        }
+
         /* Ensure responsive layout */
         @media (max-width: 768px) {
             .bio-flex {
@@ -193,6 +259,10 @@
             }
             .bio-image-container {
                 width: 50%;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
@@ -218,35 +288,52 @@
 
     <main class="container content-area">
         
-        <!-- Tab 1: Bio & Expertise -->
         <div id="bio" class="tab-content active">
             <div class="bio-flex">
                 <div class="bio-image-container">
                     <img src="Derek Lake Photo.png" alt="Photo of Derek T. Lake, PhD">
-                    <p style="font-size: 1.1rem; line-height: 1.2;"><em>Health services researcher bridging rigorous methods with operational expertise from leading healthcare organizations.</em></p>
+                    
+                    <div style="text-align: left; margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.6;">
+                        <p><strong>Current Role:</strong><br> Faculty, Weill Cornell Medicine</p>
+                        <p><strong>Education:</strong><br> PhD, Brown University<br> MSc, Weill Cornell Medicine</p>
+                        <p><strong>Contact:</strong><br> <a href="mailto:derek.t.lake.phd@gmail.com">derek.t.lake.phd@gmail.com</a></p>
+                        <p><strong>Social:</strong><br> <a href="https://www.linkedin.com/in/derek-t-lake-phd-msc-68299445/" target="_blank">LinkedIn Profile</a></p>
+                    </div>
                 </div>
+
                 <div class="bio-text-container">
-                    <h2>Academic & Professional Background</h2>
-                    <p>I completed my master's degree in Health Policy and Economics at Weill Cornell Graduate School of Medical Sciences in 2016, followed by a PhD in Health Services Research with a concentration in Health Economics from Brown University in 2022, where I also served as a postdoctoral research associate. Following my postdoctoral training, I served as an Instructor at Weill Cornell Medicine, where I expanded my research on vertical integration and Medicare Advantage, secured competitive grant funding, and published in premier journals including Health Affairs and JAMA Health Forum.</p>
                     
-                    <p>My research program addresses critical challenges in U.S. healthcare: the consequences of vertical integration between insurers and providers, and how payment models drive disparities in care delivery. What distinguishes this work is the integration of rigorous academic training with nearly a decade of senior leadership experience in healthcare economics and value-based payment strategy at some of the nation's premier accountable care organizations and health insurers.</p>
-                    
-                    <p>This industry experience at leading healthcare organizations provided unique operational insight into how payment policy reforms shape organizational behavior. I witnessed firsthand how these entities respond to value-based payment incentives: optimizing quality performance, refining clinical condition capture to maximize risk adjustment, and implementing strategies to manage utilization and costs. These insights inform research questions that bridge the gap between policy intent and real-world implementation, enabling me to examine not just whether reforms work, but how and why they produce their observed effects.</p>
-                    
-                    <h3>Technical Expertise</h3>
-                    <p>My methodological expertise includes causal inference and quasi-experimental research methodology, focusing on difference-in-differences (traditional and staggered approaches), instrumental variables, regression discontinuity, propensity score models, and cross-temporal matching. These rigorous frameworks are often supported by Machine Learning (ML) and Artificial Intelligence (AI) approaches for robust estimation in my research.</p>
-                    <p>I maintain expert-level proficiency in Python, R, Stata, and SAS, supported by nearly a decade of intensive experience working with large-scale healthcare databases, including administrative claims data, electronic health records, and post-acute care assessments. My technical depth extends to designing and implementing both local and cloud-based SQL and NoSQL database architectures for enterprise-scale datasets. Additionally, I bring substantial experience leading multidisciplinary teams of programmers and analysts in complex health services research and healthcare analytics environments.</p>
-                    
-                    <h3 style="margin-top: 2.5rem;">Contact Information</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.2;">
-                        Email: <a href="mailto:derek.t.lake.phd@gmail.com">derek.t.lake.phd@gmail.com</a><br>
-                        LinkedIn: <a href="https://www.linkedin.com/in/derek-t-lake-phd-msc-68299445/" target="_blank">View Professional Profile</a>
-                    </p>
+                    <p class="tagline">"Studying the systems I helped build."</p>
+
+                    <p>I am a health services researcher and economist investigating the most pressing challenges in U.S. healthcare: the consequences of <strong>vertical integration</strong> between insurers and providers, and how <strong>payment models</strong> drive disparities in care delivery.</p>
+
+                    <div class="highlight-box">
+                        <h3 style="margin-top: 0; font-size: 1.3rem;">The Dual Lens Advantage</h3>
+                        <p style="font-size: 1rem; margin-bottom: 1rem;">What distinguishes my research is the integration of rigorous causal inference with nearly a decade of executive leadership experience.</p>
+                        
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <h4>Academic Rigor</h4>
+                                <p>PhD in Health Services Research (Health Economics) from <strong>Brown University</strong>. Expert in quasi-experimental design, difference-in-differences, and machine learning methods to estimate causal effects in complex markets.</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h4>Operational Insight</h4>
+                                <p>Nearly 10 years of senior leadership experience at <strong>industry-leading ACOs and health insurers</strong>. I possess rare operational insight into the strategic incentives that drive consolidation, risk coding, and payment policy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Core Research Agenda</h3>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.75rem;"><strong>Market Consolidation:</strong> Providing the first empirical evidence on how "payvider" consolidation (insurers acquiring physician practices) affects prices, steering, and market competition.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>Medicare Advantage:</strong> Examining how vertically integrated plans strategically optimize risk scores and benefit design to maximize revenue.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>Post-Acute Care & Disparities:</strong> Evaluating how payment policy reforms (like IRF/SNF reimbursement) impact access and mortality for vulnerable populations.</li>
+                    </ul>
+
                 </div>
             </div>
         </div>
         
-        <!-- Tab 2: Research Portfolio -->
         <div id="research" class="tab-content">
             <h2>Featured Publications (2025)</h2>
             
@@ -254,22 +341,22 @@
 
             <ul class="pub-list">
                 <li class="featured-pub">
-   		    <p style="font-size: 0.9rem; color: #555;">FEATURED | VERTICAL INTEGRATION</p>
-  		    <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.25rem; margin-bottom: 0.5rem;">The Impact of Health Insurer Acquisitions of Physician Practices on Prices and Patient Visits</p>
-    		    <p style="font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 1rem;">
-        		Lake, D.*, Casalino, L., Richards, M., Nicholson, G., Fernandez, J., O'Connell, B., Zhang, M., Braun, T. (2025). The Impact of Health Insurer Acquisitions of Physician Practices on Prices and Patient Visits. <em>Health Services Research</em>. First published: 05 August 2025. <a href="https://doi.org/10.1111/1475-6773.70025" target="_blank">https://doi.org/10.1111/1475-6773.70025</a>
-    		    </p>
-    		    <a href="https://derektlakephd-prog.github.io/hsr-payvider-prices-study/" class="btn btn-primary" target="_blank">View Interactive Summary</a>
-	        </li>
+                    <p style="font-size: 0.9rem; color: #555;">FEATURED | VERTICAL INTEGRATION</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.25rem; margin-bottom: 0.5rem;">The Impact of Health Insurer Acquisitions of Physician Practices on Prices and Patient Visits</p>
+                    <p style="font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 1rem;">
+                        Lake, D.*, Casalino, L., Richards, M., Nicholson, G., Fernandez, J., O'Connell, B., Zhang, M., Braun, T. (2025). The Impact of Health Insurer Acquisitions of Physician Practices on Prices and Patient Visits. <em>Health Services Research</em>. First published: 05 August 2025. <a href="https://doi.org/10.1111/1475-6773.70025" target="_blank">https://doi.org/10.1111/1475-6773.70025</a>
+                    </p>
+                    <a href="https://derektlakephd-prog.github.io/hsr-payvider-prices-study/" class="btn btn-primary" target="_blank">View Interactive Summary</a>
+                </li>
                 
                 <li class="featured-pub">
-   		    <p style="font-size: 0.9rem; color: #555;">FEATURED | POST-ACUTE CARE</p>
-    		    <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.25rem; margin-bottom: 0.5rem;">Comparative Effectiveness of Inpatient Rehabilitation Versus Skilled Nursing Facilities for Stroke and Hip Fracture Patients</p>
-    		    <p style="font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 1rem;">
-      		        Lake, D.*, Kumar, S., Geng, F., Gozalo, P. (2025). Comparative Effectiveness of Inpatient Rehabilitation Versus Skilled Nursing Facilities for Stroke and Hip Fracture Patients. <em>Journal of the American Geriatrics Society</em>. First published: 23 October 2025. <a href="https://doi.org/10.1111/jgs.70164" target="_blank">https://doi.org/10.1111/jgs.70164</a>
-    		    </p>
-   		    <a href="https://derektlakephd-prog.github.io/jags-irf-study/" class="btn btn-primary" target="_blank">View Interactive Summary</a>
-		</li>
+                    <p style="font-size: 0.9rem; color: #555;">FEATURED | POST-ACUTE CARE</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.25rem; margin-bottom: 0.5rem;">Comparative Effectiveness of Inpatient Rehabilitation Versus Skilled Nursing Facilities for Stroke and Hip Fracture Patients</p>
+                    <p style="font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 1rem;">
+                        Lake, D.*, Kumar, S., Geng, F., Gozalo, P. (2025). Comparative Effectiveness of Inpatient Rehabilitation Versus Skilled Nursing Facilities for Stroke and Hip Fracture Patients. <em>Journal of the American Geriatrics Society</em>. First published: 23 October 2025. <a href="https://doi.org/10.1111/jgs.70164" target="_blank">https://doi.org/10.1111/jgs.70164</a>
+                    </p>
+                    <a href="https://derektlakephd-prog.github.io/jags-irf-study/" class="btn btn-primary" target="_blank">View Interactive Summary</a>
+                </li>
             </ul>
 
             <h2>Selected Peer-Reviewed Publications (Past 12 Months)</h2>
